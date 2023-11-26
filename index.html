@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <p id="message"></p>
+    <script>
+        
+var messagearray=[prompt("Enter Text")];
+var textposition=0;
+var speed=100;
+typewriter=() =>{
+    document.getElementById("message").innerHTML=messagearray[0].substring(0,textposition)+"<span>\u25ae</span>"
+
+    if(textposition++ != messagearray[0].length){
+        setTimeout(typewriter,speed);
+    }
+}
+window.addEventListener("load" ,typewriter)
+    </script>
+</body>
+</html>
